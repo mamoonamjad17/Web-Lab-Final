@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="shadow-lg p-3 mb-5 bg-body rounded">
+        <h1>Todos:</h1>
+</div>
+
+
+<% for (let i=0;i<todos.length;i++) {%>
+    <div>
+        <div>
+            <h4>Name: <%= todos[i].name %></h4>
+            <p>Description: <%= todos[i].description %></p>
+            <a href="/todos/update/<%= todos[i]._id %>"><button type="button" class="btn btn-warning">Update</button></a>
+            <a href="/todos/delete/<%= todos[i]._id %>"><button type="button" class="btn btn-danger">Delete</button></a>
+            <br>
+        </div>
+    </div>
+<%}%>
+
+</body>
+</html>
